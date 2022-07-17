@@ -1,0 +1,74 @@
+.form{
+    border: 1px solid #000;
+    margin: 30px 30px 0 20px;
+    position: relative;
+  }
+
+  .form-searce{
+    width: 66.7;
+  }
+
+  .img-bucet{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .title{
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.input-title{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    }
+
+.input-title::placeholder{
+    font-size: 1.25rem;
+}
+  
+.form-discription{
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-left: 15px;
+    }
+
+    .textarea{
+        display: flex;
+    }
+
+.form-textarea{
+    display: block;
+    width: 95%;
+    height: 51vh;
+    resize:none;
+    margin-top: 25px;
+    margin-left: 15px;
+    font-size: 2rem;
+    padding-top: 15px;
+    padding-left: 15px;
+        }
+
+    .save{
+        display: flex;
+        justify-content: center;
+        width: 15%;
+        background-color: #fff;
+        font-size: 1.25rem;
+        padding: 10px;
+        margin: 25px auto;
+        border: 1px solid #000;
+        border-radius: 5px;
+        cursor: pointer;
+     }

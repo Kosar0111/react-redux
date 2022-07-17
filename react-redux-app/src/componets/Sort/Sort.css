@@ -1,0 +1,57 @@
+.sort{
+    display: flex;
+    margin: 20px 0;
+    
+  }
+  
+.sort-list{
+    width: 33.3%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto 20px auto 0;
+    }
+
+.sort-title{
+   display: flex;
+   font-size: 1.5rem;
+   margin-right: 15px;
+   margin: auto 0 auto 20px;
+}
+
+.arrow{
+   height: 30px;
+   width: 30px; 
+   margin-left: 20px
+}
+
+
+.sort-date{
+    display: flex;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    }
+
+.sort-searce{
+    width: 40%;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    padding-left: 10px;
+    border: 1px solid #000;
+    border-right: none;
+}
+
+.sort-searce::placeholder{
+      font-size: 1.25rem;
+}
+
+.searce{
+    width: 25px;
+    height: 42px;
+    margin: auto 0;
+    padding: 5px;
+    border: 1px solid #000;
+    border-left: none;
+    box-sizing: border-box;
+}
