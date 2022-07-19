@@ -2,8 +2,11 @@ import React from 'react'
 import './Sort.css'
 import arrow from '../../img/arrow.svg'
 import searce from '../../img/searce.png'
+import { sortDate } from '../../store/listSlice'
+import { useDispatch } from 'react-redux'
 
 const Sort = () => {
+    const dispatch = useDispatch(sortDate)
     return (
         <div className='sort'>
             <div className='sort-list' >
@@ -12,7 +15,7 @@ const Sort = () => {
                     <img className='arrow' src={arrow} alt='' />
                 </div>
                 <div className='sort-date'>
-                    <p>Date </p>
+                    <p onClick={dispatch}>Date </p>
                     <img className='arrow' src={arrow} alt='' />
                 </div>
             </div>

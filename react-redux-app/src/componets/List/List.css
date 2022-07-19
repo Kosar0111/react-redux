@@ -12,3 +12,8 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.new-stop{
+  opacity: .5;
+  pointer-events: none;
+}

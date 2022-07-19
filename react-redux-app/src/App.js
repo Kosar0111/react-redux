@@ -9,8 +9,6 @@ function App() {
   const [start, setStart] = useState(true)
   const themes = useSelector(state => state.themes.themes);
   const [visibleForm, setVisibleForm] = useState(false)
-  console.log(visibleForm);
-
 
   const hiddenForm = visibleForm => setVisibleForm(!visibleForm)
   const toggle = (start) => setStart(!start)

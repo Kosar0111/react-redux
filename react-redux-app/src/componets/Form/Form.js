@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './Form.css'
 import bucet from '../../img/bucet.svg'
-import { saveTheme, deleteTheme } from '../../store/listSlice'
-//let formHidden = false
+import { saveTheme } from '../../store/listSlice'
 
 const Form = ({ hiddenForm, visibleForm }) => {
-    console.log(visibleForm);
 
     const [title, setTitle] = useState('')
     const [discription, setDiscription] = useState('')
     const dispatch = useDispatch()
+    const themes = useSelector(state => state.themes.themes)
 
     const addTheme = (e) => {
         e.preventDefault()
@@ -18,12 +17,6 @@ const Form = ({ hiddenForm, visibleForm }) => {
         setTitle('')
         setDiscription('')
         hiddenForm()
-    }
-
-    const removeTheme = (id) => {
-        dispatch(deleteTheme({ id }))
-        setTitle('')
-        setDiscription('')
     }
 
     const inputChange = (event) => {
@@ -40,7 +33,7 @@ const Form = ({ hiddenForm, visibleForm }) => {
                 className='img-bucet'
                 src={bucet}
                 alt=''
-                onClick={removeTheme} />
+            />
             <div className="title">Title</div>
             <input
                 className='input-title'

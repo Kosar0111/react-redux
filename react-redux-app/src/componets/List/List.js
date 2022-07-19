@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import './List.css'
 import ListItem from '../ListItem/ListItem'
@@ -12,10 +12,11 @@ const List = ({ hiddenForm }) => {
                 onClick={hiddenForm}
                 className='new'> + New</button>
             {themes.map(theme => {
+
                 return (
                     <ListItem
                         key={theme.id}
-                        {...theme}
+                        theme={theme}
                     />
                 )
             })}
