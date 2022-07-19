@@ -4,6 +4,10 @@
     position: relative;
   }
 
+.form-hidden{
+    visibility: hidden;
+}
+
   .form-searce{
     width: 66.7;
   }
@@ -72,3 +76,7 @@
         border-radius: 5px;
         cursor: pointer;
      }
+
+.save-hidden{
+    visibility: hidden;
+}     

@@ -3,7 +3,7 @@ import './Sort.css'
 import arrow from '../../img/arrow.svg'
 import searce from '../../img/searce.png'
 
-function Sort() {
+const Sort = () => {
     return (
         <div className='sort'>
             <div className='sort-list' >
@@ -16,7 +16,7 @@ function Sort() {
                     <img className='arrow' src={arrow} alt='' />
                 </div>
             </div>
-            <input className='sort-searce' type='text' name='title' placeholder='Searce the questions' /><img className='searce' src={searce} alt='' />
+            <input className='sort-searce' type='text' name='title' placeholder='Searce the questions' maxLength='120' /><img className='searce' src={searce} alt='' />
         </div>
     )
 }

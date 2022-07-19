@@ -1,0 +1,11 @@
+.theme{
+    width: 90%;
+    background-color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}

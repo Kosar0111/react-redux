@@ -67,6 +67,10 @@ margin-top: 5px;
   margin-bottom: 20px;
 }
 
+.sort-main-hiden{
+  visibility: hidden;
+}
+
 .content-list{
   width: 33.3%;
   }
@@ -75,3 +79,4 @@ margin-top: 5px;
   width: 66.7%;
  
 }
+
