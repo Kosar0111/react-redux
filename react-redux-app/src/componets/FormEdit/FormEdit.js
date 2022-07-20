@@ -2,27 +2,33 @@ import React, { useState } from 'react'
 import bucet from '../../img/bucet.svg'
 import { updateTheme, deleteTheme } from '../../store/listSlice'
 import './FormEdit.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const FormEdit = (theme) => {
-    const [title, setTitle] = useState('')
-    const [discription, setDiscription] = useState('')
+    const editTitle = theme.title
+    const editDescription = theme.description
+    const editId = theme.id
+
+    const [title, setTitle] = useState(editTitle)
+    const [id] = useState(editId)
+    const [description, setDescription] = useState(editDescription)
+    const [formEditHidden, setFormEditHidden] = useState(true)
+    const formHidden = () => setFormEditHidden(!formEditHidden)
     const dispatch = useDispatch()
-
-    console.log(theme);
-
 
     const EditTheme = (e) => {
         e.preventDefault()
-        dispatch(({ title, discription }))
+        dispatch(updateTheme({ title, description, id }))
         setTitle('')
-        setDiscription('')
+        setDescription('')
+        formHidden()
     }
 
-    const removeTheme = (id) => {
+    const removeTheme = () => {
         dispatch(deleteTheme({ id }))
         setTitle('')
-        setDiscription('')
+        setDescription('')
+        formHidden()
     }
 
     const inputChange = (event) => {
@@ -30,15 +36,15 @@ const FormEdit = (theme) => {
             event.preventDefault();
         }
     }
-    const check = (title.length >= 5 && discription.length >= 10)
+    const check = (title.length >= 5 && description.length >= 10)
 
     return (
-        <div>
-            <form className='form-edit'>
+        <div >
+            <form className={formEditHidden ? 'form-edit' : 'form-edit-hidden'}>
                 <img
                     className='img-bucet'
                     src={bucet}
-                    alt=''
+                    alt='bucet'
                     onClick={removeTheme} />
                 <div className="title-edit">Title</div>
                 <input
@@ -55,14 +61,14 @@ const FormEdit = (theme) => {
                 <div className='textarea-edit'>
                     <textarea
                         className='form-textarea-edit'
-                        value={discription}
-                        onChange={(e) => setDiscription(e.target.value)}
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
                         maxLength="500"
                         row='25'>
                     </textarea>
                 </div>
 
-                <button className={check ? 'save' : 'save-hidden'} onClick={(e) => EditTheme(e)}>Update</button>
+                <button className={check ? 'save-edit' : 'save-edit-hidden'} onClick={(e) => EditTheme(e)}>Update</button>
             </form>
         </div>
     )

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import './List.css'
 import ListItem from '../ListItem/ListItem'
 
 const List = ({ hiddenForm }) => {
-    const themes = useSelector(state => state.themes.themes);
+    const themes = useSelector(state => state.themes.lists);
 
     return (
         <div className='list'>

@@ -2,37 +2,44 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from 'uuid';
 
 const listSlice = createSlice({
-    name: 'themes',
+    name: 'lists',
     initialState: {
-        themes: []
+        lists: []
     },
     reducers: {
         saveTheme(state, action) {
-            state.themes.push({
+            state.lists.push({
                 id: uuidv4(),
                 title: action.payload.title,
-                discription: action.payload.discription,
+                description: action.payload.description,
                 time: new Date().toString(),
                 edit: false
             })
         },
         deleteTheme(state, action) {
-            state.themes = state.themes.filter(theme => theme.id !== action.payload.id)
+            state.lists = state.lists.filter(list => list.id !== action.payload.id)
+            console.log(action.payload.id);
+
         },
         updateTheme(state, action) {
-            const { title, discription, id } = action.payload
-            const themeEdit = state.themes.find(theme => theme.id === id)
+            const themeEdit = state.lists.find(list => list.id === action.payload.id);
+            console.log(action.payload.id);
+
             if (themeEdit) {
-                themeEdit.discription = discription
-                themeEdit.title = title
+                themeEdit.description = action.payload.description
+                themeEdit.title = action.payload.title
             }
 
         },
-        findTheme(state, action) { },
-        sortDate(state) {
-            state = state.themes.time.sort()
+        findTheme(state, action) {
+
         },
-        sortTitle(state, action) { },
+        sortDate(state) {
+            state.lists.sort((a, b) => b.time.localeCompare(a.time))
+        },
+        sortTitle(state) {
+            state.lists.sort((a, b) => a.title.localeCompare(b.title))
+        },
     },
 });
 

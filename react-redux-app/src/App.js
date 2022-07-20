@@ -7,11 +7,11 @@ import List from './componets/List/List'
 
 function App() {
   const [start, setStart] = useState(true)
-  const themes = useSelector(state => state.themes.themes);
+  const themes = useSelector(state => state.themes.lists);
   const [visibleForm, setVisibleForm] = useState(false)
 
   const hiddenForm = visibleForm => setVisibleForm(!visibleForm)
-  const toggle = (start) => setStart(!start)
+  const toggle = start => setStart(!start)
 
   return (
     <div className='all-app'>

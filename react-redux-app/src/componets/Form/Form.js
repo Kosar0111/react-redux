@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import './Form.css'
 import bucet from '../../img/bucet.svg'
 import { saveTheme } from '../../store/listSlice'
@@ -7,15 +7,14 @@ import { saveTheme } from '../../store/listSlice'
 const Form = ({ hiddenForm, visibleForm }) => {
 
     const [title, setTitle] = useState('')
-    const [discription, setDiscription] = useState('')
+    const [description, setDescription] = useState('')
     const dispatch = useDispatch()
-    const themes = useSelector(state => state.themes.themes)
 
     const addTheme = (e) => {
         e.preventDefault()
-        dispatch(saveTheme({ title, discription }))
+        dispatch(saveTheme({ title, description }))
         setTitle('')
-        setDiscription('')
+        setDescription('')
         hiddenForm()
     }
 
@@ -24,7 +23,7 @@ const Form = ({ hiddenForm, visibleForm }) => {
             event.preventDefault();
         }
     }
-    const check = (title.length >= 5 && discription.length >= 10)
+    const check = (title.length >= 5 && description.length >= 10)
 
 
     return (
@@ -32,7 +31,7 @@ const Form = ({ hiddenForm, visibleForm }) => {
             <img
                 className='img-bucet'
                 src={bucet}
-                alt=''
+                alt='bucet'
             />
             <div className="title">Title</div>
             <input
@@ -50,8 +49,8 @@ const Form = ({ hiddenForm, visibleForm }) => {
             <div className='textarea'>
                 <textarea
                     className='form-textarea'
-                    value={discription}
-                    onChange={(e) => setDiscription(e.target.value)}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     maxLength="500"
                     row='25'>
                 </textarea>
