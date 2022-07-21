@@ -46,6 +46,10 @@ margin-top: 5px;
   display: none;
 }
 
+.content-list{
+  overflow: auto;
+}
+
 .content-done{
   display: block;
   margin: 10px;

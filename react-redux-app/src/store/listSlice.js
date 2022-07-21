@@ -18,12 +18,9 @@ const listSlice = createSlice({
         },
         deleteTheme(state, action) {
             state.lists = state.lists.filter(list => list.id !== action.payload.id)
-            console.log(action.payload.id);
-
         },
         updateTheme(state, action) {
             const themeEdit = state.lists.find(list => list.id === action.payload.id);
-            console.log(action.payload.id);
 
             if (themeEdit) {
                 themeEdit.description = action.payload.description
@@ -32,7 +29,9 @@ const listSlice = createSlice({
 
         },
         findTheme(state, action) {
-
+            console.log(action.payload.title);
+            /* state.lists = state.lists.filter(list =>
+                 list.title.toLowerCase().includes(action.payload.title.toLowerCase()))*/
         },
         sortDate(state) {
             state.lists.sort((a, b) => b.time.localeCompare(a.time))
