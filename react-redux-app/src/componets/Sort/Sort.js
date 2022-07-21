@@ -10,9 +10,8 @@ const Sort = () => {
     const [searceTitle, setSearceTitle] = useState('')
     const dispatch = useDispatch()
     const search = () => {
-        dispatch(findTheme({ searceTitle }))
+        dispatch(findTheme(searceTitle))
     }
-    console.log(searceTitle);
 
     return (
         <div className='sort'>

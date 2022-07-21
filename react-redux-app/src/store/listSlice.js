@@ -29,9 +29,8 @@ const listSlice = createSlice({
 
         },
         findTheme(state, action) {
-            console.log(action.payload.title);
-            /* state.lists = state.lists.filter(list =>
-                 list.title.toLowerCase().includes(action.payload.title.toLowerCase()))*/
+            state.lists = state.lists.filter(list =>
+                list.title.toLowerCase().includes(action.payload.toLowerCase()))
         },
         sortDate(state) {
             state.lists.sort((a, b) => b.time.localeCompare(a.time))
