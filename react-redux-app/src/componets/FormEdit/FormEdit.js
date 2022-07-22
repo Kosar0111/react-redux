@@ -36,6 +36,7 @@ const FormEdit = (theme) => {
             event.preventDefault();
         }
     }
+
     const check = (title.length >= 5 && description.length >= 10)
 
     return (
@@ -67,7 +68,6 @@ const FormEdit = (theme) => {
                         row='25'>
                     </textarea>
                 </div>
-
                 <button className={check ? 'save-edit' : 'save-edit-hidden'} onClick={(e) => EditTheme(e)}>Update</button>
             </form>
         </div>

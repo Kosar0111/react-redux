@@ -3,15 +3,17 @@ import { useSelector } from 'react-redux'
 import './List.css'
 import ListItem from '../ListItem/ListItem'
 
-const List = ({ hiddenForm }) => {
+const List = ({ hiddenForm, searceTitle }) => {
     const themes = useSelector(state => state.themes.lists);
+    const sortTitle = themes.filter(theme =>
+        theme.title.toLowerCase().includes(searceTitle.toLowerCase()))
 
     return (
         <div className='list'>
             <button
                 onClick={hiddenForm}
                 className='new'> + New</button>
-            {themes.map(theme => {
+            {sortTitle.map(theme => {
 
                 return (
                     <ListItem

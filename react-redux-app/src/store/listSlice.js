@@ -26,11 +26,6 @@ const listSlice = createSlice({
                 themeEdit.description = action.payload.description
                 themeEdit.title = action.payload.title
             }
-
-        },
-        findTheme(state, action) {
-            state.lists = state.lists.filter(list =>
-                list.title.toLowerCase().includes(action.payload.toLowerCase()))
         },
         sortDate(state) {
             state.lists.sort((a, b) => b.time.localeCompare(a.time))
@@ -41,6 +36,6 @@ const listSlice = createSlice({
     },
 });
 
-export const { saveTheme, deleteTheme, findTheme, sortTitle, sortDate, updateTheme } = listSlice.actions;
+export const { saveTheme, deleteTheme, sortTitle, sortDate, updateTheme } = listSlice.actions;
 
 export default listSlice.reducer;

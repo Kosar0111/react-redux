@@ -3,18 +3,26 @@
   padding: 0;
   list-style-type: none;
   outline: none;
-}
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  font-size: 20px;
+  }
 
 .all-app {
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 5px; 
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; 
+  letter-spacing: 3px;
+  height: 95vh;
 }
 
 .add-btn{
   display: block;
   margin-top: 50vh;
+}
+
+.content-done{
+  margin-top: 20px;
+  height: 100%;
 }
 
 .add-btn-done{
@@ -25,11 +33,10 @@ margin-top: 5px;
   animation: 5s show ease;
 }
  
- @keyframes show {
-   from { opacity: 1; }
-   to { opacity: 0; }
- }
-
+@keyframes show {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
 
 .add-themes{
   background-color: #fff;
@@ -41,6 +48,7 @@ margin-top: 5px;
 .add-themes:hover{
   cursor: pointer;
 }
+
 .content{
   display: none;
 }
@@ -53,23 +61,24 @@ margin-top: 5px;
   display: block;
   margin: 10px;
   border: 1px solid #000;
-    width: 100%;
+  width: 100%;
 }
 
 .content-done{
-     animation: 5s show ease;
+  animation: 5s show ease;
 }
   
-  @keyframes show {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 .main{
   display: flex;
   margin-bottom: 20px;
-  }
+  overflow: hidden;
+  height: 87%;
+}
 
 .sort-main-hiden{
   visibility: hidden;
@@ -81,6 +90,5 @@ margin-top: 5px;
 
 .content-form{
   width: 66.7%;
- 
 }
 

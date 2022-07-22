@@ -10,15 +10,6 @@ const Form = ({ hiddenForm, visibleForm }) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const dispatch = useDispatch()
-    console.log(modalActive);
-
-    /*const modalToggle = (title, description) => {
-        if (title.length <= 7 || description.length <= 15) {
-            setModalActive(!modalActive)
-        }
-        return null
-    }*/
-
 
     const addTheme = (e) => {
         if (title.length <= 7 || description.length <= 15) {

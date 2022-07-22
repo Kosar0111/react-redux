@@ -1,8 +1,7 @@
 .sort{
     display: flex;
     margin: 20px 0;
-    
-  }
+}
   
 .sort-list{
     width: 33.3%;
@@ -10,11 +9,11 @@
     display: flex;
     justify-content: space-between;
     margin: auto 20px auto 0;
-    }
+}
 
 .sort-title{
    display: flex;
-   font-size: 1.5rem;
+   font-size: 2rem;
    margin-right: 15px;
    margin: auto 0 auto 20px;
    cursor: pointer;
@@ -29,7 +28,7 @@
 
 .sort-date{
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 20px;
     cursor: pointer;
     }
@@ -45,7 +44,7 @@
 }
 
 .sort-searce::placeholder{
-      font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .searce{

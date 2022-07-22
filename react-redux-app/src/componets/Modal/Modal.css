@@ -4,7 +4,6 @@
     left: 0;
     display: flex;
     align-items: center;
-    vertical-align: middle;
     text-align: center;
     justify-content: center;
     background: rgba(0,0,0, 0.3 );
@@ -17,14 +16,16 @@
 .modal__content{
     left: 50%;
     top: 50%;
-        background: #000;
+    background: #000;
     color: red;
     border: 2px solid black;
     border-radius: 5px;
     height: 400px;
     width: 400px;
-    font-size: 2.5rem;
+    margin: auto;
 }
-p{
-    padding-top: 20px;
+
+.atention{
+    margin: 55px auto;
+    font-size: 2rem;
 }

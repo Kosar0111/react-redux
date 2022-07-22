@@ -9,6 +9,7 @@ function App() {
   const [start, setStart] = useState(true)
   const themes = useSelector(state => state.themes.lists);
   const [visibleForm, setVisibleForm] = useState(false)
+  const [searceTitle, setSearceTitle] = useState('')
 
   const hiddenForm = visibleForm => setVisibleForm(!visibleForm)
   const toggle = start => setStart(!start)
@@ -20,12 +21,16 @@ function App() {
       </div>
       <div className={start ? "content" : 'content-done'} >
         <div className={themes.length >= 2 ? 'sort-main' : 'sort-main-hiden'} >
-          <Sort />
+          <Sort
+            setSearceTitle={setSearceTitle}
+          />
         </div>
         <div className='main'>
           <div className='content-list'>
             <List
-              hiddenForm={hiddenForm} />
+              hiddenForm={hiddenForm}
+              searceTitle={searceTitle}
+            />
           </div>
           <div className='content-form'>
             <Form

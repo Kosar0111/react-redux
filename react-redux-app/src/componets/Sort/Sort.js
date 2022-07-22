@@ -1,17 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Sort.css'
 import arrow from '../../img/arrow.svg'
 import searce from '../../img/searce.png'
-import { sortDate, sortTitle, findTheme } from '../../store/listSlice'
+import { sortDate, sortTitle } from '../../store/listSlice'
 import { useDispatch } from 'react-redux'
 
-const Sort = () => {
+const Sort = ({ setSearceTitle }) => {
 
-    const [searceTitle, setSearceTitle] = useState('')
     const dispatch = useDispatch()
-    const search = () => {
-        dispatch(findTheme(searceTitle))
-    }
 
     return (
         <div className='sort'>
@@ -32,7 +28,6 @@ const Sort = () => {
                 name='title'
                 placeholder='Searce the questions' maxLength='120'
                 onChange={e => setSearceTitle(e.target.value)}
-                onKeyDown={search}
             /><img className='searce' src={searce} alt='searce' />
         </div>
     )

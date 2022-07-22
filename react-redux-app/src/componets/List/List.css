@@ -1,20 +1,20 @@
 .list {
-    text-align: center;
-    margin: 30px auto 0 auto;
-    overflow: auto;
+  text-align: center;
+  margin: 30px auto 0 auto;
+  overflow: auto;
 }
 
 .new{
-    width: 30%;
-    background-color: #fff;
-    font-size: 1.5rem;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 30%;
+  background-color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.new-stop{
-  opacity: .5;
+.new-hidden{
   pointer-events: none;
 }
+
