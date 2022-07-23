@@ -36,6 +36,6 @@ const listSlice = createSlice({
     },
 });
 
-export const { saveTheme, deleteTheme, sortTitle, sortDate, updateTheme } = listSlice.actions;
+export const { saveTheme, deleteTheme, sortTitle, sortDate, updateTheme, toggleEdit } = listSlice.actions;
 
 export default listSlice.reducer;

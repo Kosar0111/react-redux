@@ -2,15 +2,23 @@ import './ListItem.css'
 import React, { useState } from 'react'
 import FormEdit from '../FormEdit/FormEdit'
 
-const ListItem = ({ theme }) => {
+const ListItem = ({ theme, edit, editCheck }) => {
     const [editMode, setEditMode] = useState(false)
-    const click = () => setEditMode(!editMode)
 
+    const click = () => {
+        setEditMode(!editMode)
+        editCheck()
+    }
+    console.log(edit);
     return (
-        <><div className='theme' onClick={click}>
+        <><div className={edit ? 'theme-visible' : 'theme'} onClick={click}>
             {theme.title}
         </div>
-            {editMode ? <FormEdit {...theme} /> : ''}
+            {editMode ? <FormEdit
+                editCheck={editCheck}
+                edit={edit}
+                {...theme}
+            /> : ''}
         </>
 
     )

@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.new-hidden{
+.new-visible{
   pointer-events: none;
 }
 

@@ -4,7 +4,7 @@ import { updateTheme, deleteTheme } from '../../store/listSlice'
 import './FormEdit.css'
 import { useDispatch } from 'react-redux'
 
-const FormEdit = (theme) => {
+const FormEdit = (theme, { editCheck }) => {
     const editTitle = theme.title
     const editDescription = theme.description
     const editId = theme.id
@@ -22,6 +22,7 @@ const FormEdit = (theme) => {
         setTitle('')
         setDescription('')
         formHidden()
+        editCheck()
     }
 
     const removeTheme = () => {
@@ -68,7 +69,10 @@ const FormEdit = (theme) => {
                         row='25'>
                     </textarea>
                 </div>
-                <button className={check ? 'save-edit' : 'save-edit-hidden'} onClick={(e) => EditTheme(e)}>Update</button>
+                <button
+                    className={check ? 'save-edit' : 'save-edit-hidden'}
+                    onClick={(e) => EditTheme(e)}
+                >Update</button>
             </form>
         </div>
     )
