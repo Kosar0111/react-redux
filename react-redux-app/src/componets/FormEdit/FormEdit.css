@@ -1,9 +1,9 @@
 .form-edit{
     position: absolute;
     border: 1px solid #000;
-    margin: 25px 20px 0 20px;
+    margin: 25px 25px 0 20px;
     top: 0;
-    right: 10px;
+    right: -5px;
     width: 63.5vw;
     height: 77vh;
     margin-top: 128px;
@@ -50,20 +50,20 @@
 .form-discription-edit{
     text-align: left;
     font-size: 1.5rem;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 15px;
 }
 
 .textarea-edit{
      display: flex;
-     height: 50vh;
+     height: 43vh;
      margin-right: 15px;
 }
 
 .form-textarea-edit{
     display: block;
     width: 92vw;
-    height: 89%;
+    height: 82%;
     resize:none;
     margin-top: 25px;
     margin-left: 15px;
@@ -93,187 +93,187 @@
     visibility: hidden;
 }    
     
-@media  (max-width: 767px ){
-.form-edit{
-    position: absolute;
-    border: 1px solid #000;
-    margin: 12px 10px 0 20px;
-    top: 0;
-    right: 10px;
-    width: 58vw;
-    height: 80vh;
-    margin-top: 128px;
-}
-        
-.form-edit-hidden{ 
-    display: none;
-}
-        
-.form-searce-edit{
-    width: 40;
-}
-        
-.img-bucet-edit{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-        
-.title-edit{
-    text-align: left;
-    font-size: 1.5rem;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-        
-.input-title-edit{
-    width: 80%;
-    height: 40px;
-    display: flex;
-    font-size: 1.25rem;
-    margin-top: 15px;
-    margin-left: 15px;
-    padding-left: 10px;
-}
-        
-.input-title-edit::placeholder{
-    font-size: 1.25rem;
-}
-          
-.form-discription-edit{
-    text-align: left;
-    font-size: 1.5rem;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-        
-.textarea-edit{
-    display: flex;
-}
-        
-.form-textarea-edit{
-    display: block;
-    width: 95vw;
-    height: 45vh;
-    resize:none;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 10px;
-    font-size: 1.5rem;
-    padding-top: 10px;
-    padding-left: 15px;
-}
-        
-.save-edit{
-    display: flex;
-    justify-content: center;
-    width: 15%;
-    background-color: #fff;
-    font-size: 1rem;
-    padding: 10px;
-    margin: 10px auto;
-    border: 1px solid #000;
-    border-radius: 5px;
-    cursor: pointer;
-}
-        
-.save-hidden-edit{
-    visibility: hidden;
-}    
+@media  (max-width: 425px ){
+    .form-edit{
+        position: absolute;
+        border: 1px solid #000;
+        margin: 12px 10px 0 20px;
+        top: 0;
+        right: 10px;
+        width: 58vw;
+        height: 80vh;
+        margin-top: 128px;
     }
-
-@media(max-width: 1023px){
-.form-edit{
-    position: absolute;
-    border: 1px solid #000;
-    margin: 12px 10px 0 20px;
-    top: 0;
-    right: 10px;
-    width: 63vw;
-    height: 77vh;
-    margin-top: 128px;
-}
+            
+    .form-edit-hidden{ 
+        display: none;
+    }
+            
+    .form-searce-edit{
+        width: 40;
+    }
+            
+    .img-bucet-edit{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+            
+    .title-edit{
+        text-align: left;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+            
+    .input-title-edit{
+        width: 80%;
+        height: 40px;
+        display: flex;
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-left: 15px;
+        padding: 10px;
+        border: 1px solid #000;
+    }
+            
+    .input-title-edit::placeholder{
+        font-size: 1.25rem;
+    }
+              
+    .form-discription-edit{
+        text-align: left;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+            
+    .textarea-edit{
+        display: flex;
+    }
+            
+    .form-textarea-edit{
+        display: block;
+        width: 100%;
+        height: 95%;
+        resize:none;
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: 1.5rem;
+        padding-top: 10px;
+        padding-left: 15px;
+    }
+            
+    .save-edit{
+        display: flex;
+        justify-content: center;
+        width: 45%;
+        background-color: #fff;
+        font-size: 1rem;
+        padding: 10px;
+        margin: 20px auto;
+        border: 1px solid #000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+            
+    .save-hidden-edit{
+        visibility: hidden;
+    }    
+        }
         
-.form-edit-hidden{ 
-    display: none;
-}
-        
-.form-searce-edit{
-    width: 40;
-}
-        
-.img-bucet-edit{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-        
-.title-edit{
-    text-align: left;
-    font-size: 1rem;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-        
-.input-title-edit{
-    width: 80%;
-    height: 30px;
-    display: flex;
-    font-size: 1.25rem;
-    margin-top: 15px;
-    margin-left: 15px;
-    padding-left: 10px;
-}
-        
-.input-title-edit::placeholder{
-    font-size: 1rem;
-}
-          
-.form-discription-edit{
-    text-align: left;
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-left: 15px;
-}
-        
-.textarea-edit{
-    display: flex;
-}
-        
-.form-textarea-edit{
-    display: block;
-    width: 95vw;
-    height: 45vh;
-    resize:none;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 10px;
-    font-size: 1.25rem;
-    padding-top: 10px;
-    padding-left: 15px;
-}
-        
-.save-edit{
-    display: flex;
-    justify-content: center;
-    width: 15%;
-    background-color: #fff;
-    font-size: 1rem;
-    margin: 7.5px auto;
-    border: 1px solid #000;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 7%;
-    align-items: center;
-}
-        
-.save-hidden-edit{
-    visibility: hidden;
-}    
-}
-
+    @media(max-width: 1024px){
+        .form-edit{
+            position: absolute;
+            border: 1px solid #000;
+            margin: 12px 10px 0 20px;
+            top: 0;
+            right: 10px;
+            width: 60vw;
+            height: 77vh;
+            margin-top: 128px;
+        }
+                
+        .form-edit-hidden{ 
+            display: none;
+        }
+                
+        .form-searce-edit{
+            width: 40;
+        }
+                
+        .img-bucet-edit{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+                
+        .title-edit{
+            text-align: left;
+            font-size: 1rem;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+                
+        .input-title-edit{
+            width: 80%;
+            height: 30px;
+            display: flex;
+            font-size: 1.25rem;
+            margin-top: 15px;
+            margin-left: 15px;
+            padding-left: 10px;
+        }
+                
+        .input-title-edit::placeholder{
+            font-size: 1rem;
+        }
+                    
+        .form-discription-edit{
+            text-align: left;
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+                
+        .textarea-edit{
+            display: flex;
+        }
+                
+        .form-textarea-edit{
+            display: block;
+            width: 95vw;
+            height: 45vh;
+            resize:none;
+            margin-top: 15px;
+            margin-left: 15px;
+            margin-right: 10px;
+            font-size: 1.25rem;
+            padding-top: 10px;
+            padding-left: 15px;
+        }
+                
+        .save-edit{
+            display: flex;
+            justify-content: center;
+            width: 15%;
+            background-color: #fff;
+            font-size: 1rem;
+            margin: 7.5px auto;
+            border: 1px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 7%;
+            align-items: center;
+        }
+                
+        .save-hidden-edit{
+            visibility: hidden;
+        }    
+        }
+            
 

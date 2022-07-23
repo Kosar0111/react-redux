@@ -22,13 +22,15 @@ const Sort = ({ setSearceTitle }) => {
                     <img className='arrow' src={arrow} alt='arrow' />
                 </div>
             </div>
-            <input
-                className='sort-searce'
-                type='text'
-                name='title'
-                placeholder='Searce the questions' maxLength='120'
-                onChange={e => setSearceTitle(e.target.value)}
-            /><img className='searce' src={searce} alt='searce' />
+            <div className='search'>
+                <input
+                    className='sort-searce'
+                    type='text'
+                    name='title'
+                    placeholder='Searce the questions' maxLength='120'
+                    onChange={e => setSearceTitle(e.target.value)}
+                /><img className='searce' src={searce} alt='searce' />
+            </div>
         </div>
     )
 }

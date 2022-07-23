@@ -91,4 +91,12 @@
 .content-form{
   width: 66.7%;
 }
-
+@media(max-width:  425px){
+  .all-app {
+    display: flex;
+    justify-content: center;
+    margin: 10px; 
+    letter-spacing: 3px;
+    height: 95vh;
+  }
+}

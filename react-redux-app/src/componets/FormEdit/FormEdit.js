@@ -4,7 +4,7 @@ import { updateTheme, deleteTheme } from '../../store/listSlice'
 import './FormEdit.css'
 import { useDispatch } from 'react-redux'
 
-const FormEdit = (theme, { editCheck }) => {
+const FormEdit = ({ editCheck, ...theme }) => {
     const editTitle = theme.title
     const editDescription = theme.description
     const editId = theme.id
@@ -30,6 +30,7 @@ const FormEdit = (theme, { editCheck }) => {
         setTitle('')
         setDescription('')
         formHidden()
+        editCheck()
     }
 
     const inputChange = (event) => {

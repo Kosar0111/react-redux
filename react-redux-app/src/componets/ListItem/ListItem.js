@@ -16,7 +16,6 @@ const ListItem = ({ theme, edit, editCheck }) => {
         </div>
             {editMode ? <FormEdit
                 editCheck={editCheck}
-                edit={edit}
                 {...theme}
             /> : ''}
         </>

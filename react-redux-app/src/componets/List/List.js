@@ -8,7 +8,7 @@ const List = ({ hiddenForm, searceTitle }) => {
     const sortTitle = themes.filter(theme =>
         theme.title.toLowerCase().includes(searceTitle.toLowerCase()))
     const [edit, setEdit] = useState(false)
-    const editCheck = edit => setEdit(!edit)
+    const editCheck = () => setEdit(!edit)
 
     return (
         <div className='list'>
