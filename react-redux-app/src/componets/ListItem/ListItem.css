@@ -24,7 +24,7 @@
     pointer-events: none;
 }
 
-@media(max-width: 425px){
+@media (min-width: 376px) and (max-width: 425px){
     .theme{
         width: 70%;
         background-color: #fff;
@@ -51,7 +51,7 @@
     }
 }
 
-@media(max-width: 768px){
+@media (min-width: 426px) and (max-width: 768px){
     .theme{
         width: 70%;
         background-color: #fff;
@@ -77,7 +77,7 @@
     }
 }
 
-@media(max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .theme{
         width: 90%;
         background-color: #fff;

@@ -61,7 +61,7 @@
     border-left: none;
     box-sizing: border-box;
 }
-@media(max-width: 425px){
+@media (min-width: 376px) and (max-width: 425px){
     .sort {
         display: block;
         margin: 5px 0;
@@ -91,7 +91,7 @@
     }
 }
 
-@media(max-width: 768px){
+@media(min-width: 426px) and (max-width: 768px){
     
     .sort {
         display: block;
@@ -122,7 +122,7 @@
     }
 }
 
-@media(max-width: 1024px){
+@media(min-width: 769px) and (max-width: 1024px){
         .sort {
         display: flex;
         margin: 5px 0;
