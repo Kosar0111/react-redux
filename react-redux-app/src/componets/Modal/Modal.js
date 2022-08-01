@@ -1,24 +1,49 @@
-import React from 'react'
-import './Modal.css'
-import { createPortal } from 'react-dom'
+import React from "react";
+import "./Modal.css";
+import { deleteTheme, toggleEdit } from "../../store/listSlice";
+import { useDispatch } from "react-redux";
 
-const modalRoot = document.getElementById('modal')
-const Modal = ({ active, setActive, title, description }) => {
-    if (active) {
-        return createPortal(
-            <div className='modal' onClick={() => setActive(!active)}>
-                <div className='modal__content' onClick={(e) => e.stopPropagation()}>
-                    <p className='atention'>{title.length > 7 ? null : 'You wroute too short title'}
-                    </p>
-                    <p className='atention'>{description.length > 15 ? null : 'You wroute too short description'}
-                    </p>
-                </div>
-            </div>,
-            modalRoot
-        )
-    }
+import { createPortal } from "react-dom";
 
-    return null
-}
+const modalRoot = document.getElementById("modal");
+const Modal = ({ active, setActive, id }) => {
+  const dispatch = useDispatch();
+  const toggleEditeForm = () => dispatch(toggleEdit());
 
-export default Modal
+  const removeTheme = () => {
+    dispatch(deleteTheme({ id }));
+    setActive(!active);
+    toggleEditeForm();
+  };
+
+  if (active) {
+    return createPortal(
+      <div className="modal">
+        <div className="modal__content">
+          <div className="delete" onClick={() => setActive(!active)}>
+            {" "}
+            Х
+          </div>
+          <div className="content_text">
+            <h2>Are you really sure to delete this theme?</h2>
+          </div>
+          <div className="button">
+            <button
+              className="button_cancel"
+              onClick={() => setActive(!active)}
+            >
+              Cancel
+            </button>
+            <button className="button_confirm" onClick={removeTheme}>
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>,
+      modalRoot
+    );
+  }
+  return null;
+};
+
+export default Modal;

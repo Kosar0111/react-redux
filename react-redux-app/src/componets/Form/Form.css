@@ -1,259 +1,288 @@
-.form{
+.form {
+  border: 1px solid #000;
+  margin: 10px 20px 0 20px;
+  position: relative;
+  height: 93%;
+}
+
+.form-hidden {
+  visibility: hidden;
+}
+
+.form-searce {
+  width: 60%;
+}
+
+.img-bucet {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input-title {
+  width: 80%;
+  height: 40px;
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-left: 15px;
+  padding-left: 10px;
+  border: 1px solid #000;
+}
+
+.input-title::placeholder {
+  font-size: 1.25rem;
+}
+
+.form-discription {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.textarea {
+  display: block;
+  height: 55%;
+  margin-right: 10px;
+}
+
+.form-textarea {
+  display: block;
+  width: 95%;
+  height: 85%;
+  resize: none;
+  margin-top: 25px;
+  margin-left: 15px;
+  font-size: 2rem;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.error {
+  margin-top: 5px;
+  margin-left: 10px;
+  color: red;
+  font-style: 0.6rem;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  background-color: #fff;
+  font-size: 1.25rem;
+  margin: 5px auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-hidden {
+  visibility: hidden;
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .form {
     border: 1px solid #000;
-    margin: 10px 20px 0 20px;
+    margin: 30px 20px 0 20px;
     position: relative;
     height: 93%;
-}
+  }
 
-.form-hidden{
-    visibility: hidden;
-}
-
-.form-searce{
-    width: 60%;
-}
-
-.img-bucet{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-
-.title{
+  .title {
     text-align: left;
-    font-size: 1.5rem;
-    margin-top: 15px;
-    margin-left: 15px;
-}
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 
-.input-title{
+  .input-title {
     width: 80%;
-    height: 40px;
+    height: 30px;
     display: flex;
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-top: 15px;
     margin-left: 15px;
     padding-left: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+  }
+
+  .form-discription {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .form-textarea {
+    display: block;
+    height: 89%;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 2rem;
+    padding-top: 15px;
+    padding-left: 15px;
+    border: 1px solid #000;
+  }
+
+  .textarea {
+    display: block;
+    height: 65%;
+  }
+
+  .error {
+    margin-top: 10px;
+    margin-left: 5px;
+    color: red;
+    font-style: 0.6rem;
+  }
+
+  .save {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    background-color: #fff;
+    font-size: 1rem;
+    margin: 10px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .form {
+    border: 1px solid #000;
+    margin: 30px 20px 0 20px;
+    position: relative;
+    height: 89%;
+  }
+
+  .title {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .input-title {
+    width: 80%;
+    height: 30px;
+    display: flex;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+  }
+
+  .form-discription {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .form-textarea {
+    display: block;
+    height: 89%;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 2rem;
+    padding-top: 15px;
+    padding-left: 15px;
+    border: 1px solid #000;
+  }
+
+  .textarea {
+    display: block;
+    height: 60%;
+  }
+
+  .error {
+    margin-top: 5px;
+    margin-left: 10px;
+    color: red;
+    font-style: 0.6rem;
+  }
+
+  .save {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    background-color: #fff;
+    font-size: 1rem;
+    margin: 10px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 
-.input-title::placeholder{
-    font-size: 1.25rem;
-}
-  
-.form-discription{
+@media (min-width: 769px) and (max-width: 1024px) {
+  .form {
+    border: 1px solid #000;
+    margin: 30px 20px 0 20px;
+    position: relative;
+    height: 89%;
+  }
+
+  .form-discription {
     text-align: left;
     font-size: 1.5rem;
     margin-top: 15px;
     margin-left: 15px;
-}
+  }
 
-.textarea{
-    display: flex;
-    height: 55%;
-    margin-right: 10px;
-}
-
-.form-textarea{
+  .form-textarea {
     display: block;
     width: 95%;
     height: 85%;
-    resize:none;
-    margin-top: 25px;
-    margin-left: 15px;
-    font-size: 2rem;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 15px;
+    font-size: 1.5rem;
     padding-top: 15px;
     padding-left: 15px;
-}
+  }
 
-.save{
+  .textarea {
+    display: block;
+    height: 52.5%;
+  }
+
+  .error {
+    margin-top: 5px;
+    margin-left: 10px;
+    color: red;
+    font-style: 0.6rem;
+  }
+
+  .save {
     display: flex;
     justify-content: center;
     width: 15%;
     background-color: #fff;
     font-size: 1.25rem;
-    margin: 5px auto;
+    margin: 10px auto;
     border: 1px solid #000;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.save-hidden{
-    visibility: hidden;
-}   
-
-@media (min-width: 376px) and (max-width: 425px){
-    .form{
-        border: 1px solid #000;
-        margin: 30px 20px 0 20px;
-        position: relative;
-        height: 93%;
-    }
-
-    .title{
-        text-align: left;
-        font-size: 1rem;
-        margin-top: 10px;
-        margin-left: 10px;
-    }
-
-    .input-title{
-        width: 80%;
-        height: 30px;
-        display: flex;
-        font-size: 1rem;
-        margin-top: 15px;
-        margin-left: 15px;
-        padding-left: 10px;
-        padding: 5px;
-        border: 1px solid #000;
-    }
-
-    .form-discription{
-        text-align: left;
-        font-size: 1rem;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-
-    .form-textarea{
-        display: block;
-        height: 89%;
-        resize:none;
-        margin-top: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 2rem;
-        padding-top: 15px;
-        padding-left: 15px;
-        border: 1px solid #000;
-    }
-
-    .textarea{
-        display: flex;
-        height: 65%;
-    }
-    
-    .save{
-        display: flex;
-        justify-content: center;
-        width: 35%;
-        background-color: #fff;
-        font-size: 1rem;
-        margin: 10px auto;
-        border: 1px solid #000;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-}
-@media (min-width: 426px) and (max-width: 768px){
-    .form{
-        border: 1px solid #000;
-        margin: 30px 20px 0 20px;
-        position: relative;
-        height: 89%;
-    }
-
-    .title{
-        text-align: left;
-        font-size: 1rem;
-        margin-top: 10px;
-        margin-left: 10px;
-    }
-
-    .input-title{
-        width: 80%;
-        height: 30px;
-        display: flex;
-        font-size: 1rem;
-        margin-top: 15px;
-        margin-left: 15px;
-        padding-left: 10px;
-        padding: 5px;
-        border: 1px solid #000;
-    }
-
-    .form-discription{
-        text-align: left;
-        font-size: 1rem;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-
-    .form-textarea{
-        display: block;
-        height: 89%;
-        resize:none;
-        margin-top: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 2rem;
-        padding-top: 15px;
-        padding-left: 15px;
-        border: 1px solid #000;
-    }
-
-    .textarea{
-        display: flex;
-        height: 60%;
-    }
-    
-    .save{
-        display: flex;
-        justify-content: center;
-        width: 35%;
-        background-color: #fff;
-        font-size: 1rem;
-        margin: 10px auto;
-        border: 1px solid #000;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-}
-
-@media(min-width: 769px) and (max-width: 1024px){
-    .form{
-        border: 1px solid #000;
-        margin: 30px 20px 0 20px;
-        position: relative;
-        height: 89%;
-    }
-
-    .form-discription{
-        text-align: left;
-        font-size: 1.5rem;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-
-    .form-textarea{
-        display: block;
-        width: 95%;
-        height: 85%;
-        resize:none;
-        margin-top: 15px;
-        margin-left: 10px;
-        margin-right: 15px;
-        font-size: 1.5rem;
-        padding-top: 15px;
-        padding-left: 15px;
-    }
-
-    .textarea{
-        display: flex;
-        height: 52.5%;
-    }
-    
-    .save{
-        display: flex;
-        justify-content: center;
-        width: 15%;
-        background-color: #fff;
-        font-size: 1.25rem;
-        margin: 10px auto;
-        border: 1px solid #000;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+  }
 }
