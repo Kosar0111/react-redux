@@ -4,14 +4,17 @@ import "./Form.css";
 import { saveTheme, newTheme } from "../../store/listSlice";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import FormEdit from "../FormEdit/FormEdit";
 
 const Form = () => {
   const newThemes = useSelector((state) => state.themes.new);
+  const editMode = useSelector((state) => state.themes.editMode);
   const dispatch = useDispatch();
 
   const hiddenForm = () => dispatch(newTheme());
   const onSubmit = (values) => {
     dispatch(saveTheme(values));
+    hiddenForm();
     formik.resetForm();
   };
 
@@ -37,51 +40,49 @@ const Form = () => {
     validationSchema,
   });
 
-  return (
-    <form
-      className={newThemes ? "form-hidden" : "form"}
-      onSubmit={formik.handleSubmit}
-    >
-      <label className="title">Title</label>
-      <input
-        className="input-title"
-        type="text"
-        name="title"
-        placeholder="Title the questions"
-        maxLength="120"
-        onBlur={formik.handleBlur}
-        value={formik.values.title}
-        onChange={formik.handleChange}
-      />
-      {formik.errors.title ? (
-        <div className="error">{formik.errors.title}</div>
-      ) : null}
-
-      <label className="form-discription">Description</label>
-      <div className="textarea">
-        <textarea
-          className="form-textarea"
-          name="description"
-          value={formik.values.description}
-          onChange={formik.handleChange}
-          maxLength="500"
-          row="25"
-        ></textarea>
-        {formik.errors.description ? (
-          <div className="error">{formik.errors.description}</div>
-        ) : null}
-      </div>
-
-      <button
-        type="submit"
-        className={"save"}
-        onClick={hiddenForm}
-        disabled={!formik.isValid}
+  if (!newThemes) {
+    return (
+      <form
+        className={newThemes ? "form-hidden" : "form"}
+        onSubmit={formik.handleSubmit}
       >
-        Save
-      </button>
-    </form>
-  );
-};
+        <label className="title">Title</label>
+        <input
+          className="input-title"
+          type="text"
+          name="title"
+          placeholder="Title the questions"
+          maxLength="120"
+          onBlur={formik.handleBlur}
+          value={formik.values.title}
+          onChange={formik.handleChange}
+        />
+        {formik.errors.title ? (
+          <div className="error">{formik.errors.title}</div>
+        ) : null}
 
+        <label className="form-discription">Description</label>
+        <div className="textarea">
+          <textarea
+            className="form-textarea"
+            name="description"
+            value={formik.values.description}
+            onChange={formik.handleChange}
+            maxLength="500"
+            row="25"
+          ></textarea>
+          {formik.errors.description ? (
+            <div className="error">{formik.errors.description}</div>
+          ) : null}
+        </div>
+
+        <button type="submit" className={"save"} disabled={!formik.isValid}>
+          Save
+        </button>
+      </form>
+    );
+  } else if (editMode) {
+    return <FormEdit />;
+  } else return null;
+};
 export default Form;

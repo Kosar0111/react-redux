@@ -8,7 +8,9 @@ const listSlice = createSlice({
     lists: [],
     editMode: false,
     new: false,
+    editThemeId: "",
   },
+
   reducers: {
     saveTheme(state, action) {
       state.lists.push({
@@ -20,6 +22,9 @@ const listSlice = createSlice({
     },
     deleteTheme(state, action) {
       state.lists = state.lists.filter((list) => list.id !== action.payload.id);
+    },
+    findEditThemeId(state, action) {
+      state.editThemeId = action.payload.id;
     },
     newTheme(state) {
       state.new = !state.new;
@@ -54,6 +59,7 @@ export const {
   updateTheme,
   toggleEdit,
   newTheme,
+  findEditThemeId,
 } = listSlice.actions;
 
 export default listSlice.reducer;
