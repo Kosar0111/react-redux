@@ -7,7 +7,7 @@ const listSlice = createSlice({
   initialState: {
     lists: [],
     editMode: false,
-    new: false,
+    newItemMode: false,
     editThemeId: "",
   },
 
@@ -21,20 +21,20 @@ const listSlice = createSlice({
       });
     },
     deleteTheme(state, action) {
-      state.lists = state.lists.filter((list) => list.id !== action.payload.id);
+      state.lists = state.lists.filter(list => list.id !== action.payload.id);
     },
     findEditThemeId(state, action) {
       state.editThemeId = action.payload.id;
     },
     newTheme(state) {
-      state.new = !state.new;
+      state.newItemMode = !state.newItemMode;
     },
     toggleEdit(state) {
       state.editMode = !state.editMode;
     },
     updateTheme(state, action) {
       const themeEdit = state.lists.find(
-        (list) => list.id === action.payload.id
+        list => list.id === action.payload.id
       );
 
       if (themeEdit) {

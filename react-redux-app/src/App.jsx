@@ -7,10 +7,10 @@ import List from "./componets/List/List";
 
 const App = () => {
   const [start, setStart] = useState(true);
-  const themes = useSelector((state) => state.themes.lists);
+  const themes = useSelector(state => state.themes.lists);
   const [searchTitle, setSearchTitle] = useState("");
 
-  const toggle = (start) => setStart(!start);
+  const toggle = start => setStart(!start);
 
   return (
     <div className="all-app">

@@ -43,7 +43,7 @@ const Modal = ({ active, setActive, id }) => {
       modalRoot
     );
   }
-  return null;
+  return '';
 };
 
 export default Modal;

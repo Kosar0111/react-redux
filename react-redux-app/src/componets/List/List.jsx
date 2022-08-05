@@ -12,8 +12,8 @@ const List = ({ searchTitle }) => {
 
   const dispatch = useDispatch();
   const hiddenForm = () => dispatch(newTheme());
-  const addTheme = useSelector((state) => state.themes.new);
-  const editMode = useSelector((state) => state.themes.editMode);
+  const addTheme = useSelector(state => state.themes.newItemMode);
+  const editMode = useSelector(state => state.themes.editMode);
 
   return (
     <div className="list">
@@ -23,9 +23,9 @@ const List = ({ searchTitle }) => {
       >
         + New
       </button>
-      {sortTitle.map((theme) => {
-        return <ListItem key={theme.id} {...theme} />;
-      })}
+      {sortTitle.map(theme => 
+      <ListItem key={theme.id} {...theme} />
+      )}
     </div>
   );
 };

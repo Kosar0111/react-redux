@@ -27,7 +27,7 @@ const Sort = ({ setSearchTitle }) => {
           name="title"
           placeholder="Searce the questions"
           maxLength="120"
-          onChange={(e) => setSearchTitle(e.target.value)}
+          onChange={e => setSearchTitle(e.target.value)}
         />
         <img className="searce" src={searce} alt="searce" />
       </div>

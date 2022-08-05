@@ -1,37 +1,24 @@
 import React, { useState } from "react";
-import bucet from "../../img/bucet.svg";
+import bucket from "../../img/bucet.svg";
 import { updateTheme, toggleEdit } from "../../store/listSlice";
 import "./FormEdit.css";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
-import * as yup from "yup";
+import validationSchema from "../../helpers/validation";
 import { useFormik } from "formik";
 
 const FormEdit = () => {
   const [modalActive, setModalActive] = useState(false);
-  const allTheme = useSelector((state) => state.themes.lists);
-  const editMode = useSelector((state) => state.themes.editMode);
-  const findId = useSelector((state) => state.themes.editThemeId);
+  const allTheme = useSelector(state => state.themes.lists);
+  const editMode = useSelector(state => state.themes.editMode);
+  const findId = useSelector(state => state.themes.editThemeId);
   const dispatch = useDispatch();
   const toggleEditeForm = () => dispatch(toggleEdit());
-  const editTheme = allTheme.find((el) => el.id === findId);
+  const editTheme = allTheme.find(el => el.id === findId);
   const onSubmit = (values) => {
-    dispatch(updateTheme({ ...values }));
+    dispatch(updateTheme(values ));
     toggleEditeForm();
   };
-
-  const validationSchema = yup.object({
-    title: yup
-      .string()
-      .min(5, "Must be 5 characters at least")
-      .max(30, "Too long title")
-      .required("Title is reqield!"),
-    description: yup
-      .string()
-      .min(25, "Must be 25 characters at least")
-      .max(120, "Too long title")
-      .required("Description is required field!"),
-  });
 
   const formik = useFormik({
     initialValues: {
@@ -51,8 +38,8 @@ const FormEdit = () => {
       >
         <img
           className="img-bucet-edit"
-          src={bucet}
-          alt="bucet"
+          src={bucket}
+          alt="bucket"
           onClick={() => setModalActive(!modalActive)}
         />
         <label className="title-edit">Title</label>
@@ -65,9 +52,9 @@ const FormEdit = () => {
           value={formik.values.title}
           onChange={formik.handleChange}
         />
-        {formik.errors.title ? (
+        {formik.errors.title && (
           <div className="error-edit">{formik.errors.title}</div>
-        ) : null}
+        )}
 
         <label className="form-discription-edit">Discription</label>
         <div className="textarea-edit">
@@ -79,9 +66,9 @@ const FormEdit = () => {
             maxLength="500"
             row="25"
           ></textarea>
-          {formik.errors.description ? (
+          {formik.errors.description && (
             <div className="error-edit">{formik.errors.description}</div>
-          ) : null}
+          )}
         </div>
 
         <button type="submit" className="save-edit" disabled={!formik.isValid}>
