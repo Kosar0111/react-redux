@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleEdit, findEditThemeId } from "../../store/listSlice";
 
 const ListItem = ({ ...theme }) => {
-  const editMode = useSelector(state => state.themes.editMode);
-  const addTheme = useSelector(state => state.themes.newItemMode);
+  const editMode = useSelector((state) => state.themes.editMode);
+  const newTheme = useSelector((state) => state.themes.newItemMode);
   const id = theme.id;
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const ListItem = ({ ...theme }) => {
 
   return (
     <div
-      className={editMode || !addTheme ? "theme-visible" : "theme"}
+      className={editMode || !newTheme ? "theme-visible" : "theme"}
       onClick={click}
     >
       {theme.title}

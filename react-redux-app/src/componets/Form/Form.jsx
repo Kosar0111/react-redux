@@ -1,19 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Form.css";
-import { saveTheme, newTheme } from "../../store/listSlice";
+import { addThemes, newTheme } from "../../store/listSlice";
 import { useFormik } from "formik";
 import FormEdit from "../FormEdit/FormEdit";
-import validationSchema from '../../helpers/validation'
+import validationSchema from "../../helpers/validation";
 
 const Form = () => {
-  const newThemes = useSelector(state => state.themes.newItemMode);
-  const editMode = useSelector(state => state.themes.editMode);
+  const newThemes = useSelector((state) => state.themes.newItemMode);
+  const editMode = useSelector((state) => state.themes.editMode);
   const dispatch = useDispatch();
 
   const hiddenForm = () => dispatch(newTheme());
   const onSubmit = (values) => {
-    dispatch(saveTheme(values));
+    dispatch(addThemes(values));
     hiddenForm();
     formik.resetForm();
   };
@@ -58,7 +58,7 @@ const Form = () => {
             maxLength="500"
             row="25"
           ></textarea>
-          {formik.errors.description &&(
+          {formik.errors.description && (
             <div className="error">{formik.errors.description}</div>
           )}
         </div>
@@ -70,6 +70,6 @@ const Form = () => {
     );
   } else if (editMode) {
     return <FormEdit />;
-  } else return '';
+  } else return "";
 };
 export default Form;

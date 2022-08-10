@@ -1,6 +1,6 @@
 import React from "react";
 import "./Modal.css";
-import { deleteTheme, toggleEdit } from "../../store/listSlice";
+import { deleteThemes, toggleEdit } from "../../store/listSlice";
 import { useDispatch } from "react-redux";
 
 import { createPortal } from "react-dom";
@@ -9,9 +9,9 @@ const modalRoot = document.getElementById("modal");
 const Modal = ({ active, setActive, id }) => {
   const dispatch = useDispatch();
   const toggleEditeForm = () => dispatch(toggleEdit());
-
+  console.log(id);
   const removeTheme = () => {
-    dispatch(deleteTheme({ id }));
+    dispatch(deleteThemes(id));
     setActive(!active);
     toggleEditeForm();
   };
@@ -43,7 +43,7 @@ const Modal = ({ active, setActive, id }) => {
       modalRoot
     );
   }
-  return '';
+  return "";
 };
 
 export default Modal;

@@ -1,5 +1,41 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+
+export const getThemes = createAsyncThunk(
+  "lists/getThemes",
+  async (_, rejectWithValue) => {
+    return await axios
+      .get("http://localhost:3001/themes")
+      .then((res) => res.data)
+      .catch((err) => rejectWithValue(err.message));
+  }
+);
+
+export const addThemes = createAsyncThunk(
+  "lists/addThemes",
+  async (value, { rejectWithValue }) => {
+    return await axios
+      .post("http://localhost:3001/themes", {
+        id: uuidv4(),
+        title: value.title.trim(),
+        description: value.description.trim(),
+        time: JSON.stringify(Date.now()),
+      })
+      .then((res) => res.data)
+      .catch((err) => rejectWithValue(err.res.data));
+  }
+);
+
+export const deleteThemes = createAsyncThunk(
+  "lists/deleteThemes",
+  async (id, { rejectWithValue, dispatch }) => {
+    return await axios
+      .delete(`http://localhost:3001/themes/${id}`, { id })
+      .then((res) => res.data)
+      .catch((err) => rejectWithValue(err.res.data));
+  }
+);
 
 const listSlice = createSlice({
   name: "lists",
@@ -9,6 +45,8 @@ const listSlice = createSlice({
     editMode: false,
     newItemMode: false,
     editThemeId: "",
+    loading: false,
+    error: "",
   },
 
   reducers: {
@@ -21,7 +59,7 @@ const listSlice = createSlice({
       });
     },
     deleteTheme(state, action) {
-      state.lists = state.lists.filter(list => list.id !== action.payload.id);
+      state.lists = state.lists.filter((list) => list.id !== action.payload.id);
     },
     findEditThemeId(state, action) {
       state.editThemeId = action.payload.id;
@@ -34,7 +72,7 @@ const listSlice = createSlice({
     },
     updateTheme(state, action) {
       const themeEdit = state.lists.find(
-        list => list.id === action.payload.id
+        (list) => list.id === action.payload.id
       );
 
       if (themeEdit) {
@@ -48,6 +86,48 @@ const listSlice = createSlice({
     sortTitle(state) {
       state.lists.sort((a, b) => a.title.localeCompare(b.title));
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getThemes.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(getThemes.fulfilled, (state, action) => {
+      state.loading = false;
+      state.lists = action.payload;
+      state.error = "";
+    });
+    builder.addCase(getThemes.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+
+    builder.addCase(deleteThemes.pending, (state) => {
+      state.loading = true;
+      state.error = "";
+    });
+    builder.addCase(deleteThemes.fulfilled, (state, action) => {
+      state.loading = false;
+      console.log(action);
+      listSlice.caseReducers.deleteTheme(state, action);
+      state.error = "";
+    });
+    builder.addCase(deleteThemes.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+
+    builder.addCase(addThemes.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(addThemes.fulfilled, (state, action) => {
+      state.loading = false;
+      listSlice.caseReducers.saveTheme(state, action);
+      state.error = "";
+    });
+    builder.addCase(addThemes.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
   },
 });
 
