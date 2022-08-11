@@ -60,7 +60,6 @@ const listSlice = createSlice({
     loading: false,
     error: "",
   },
-
   reducers: {
     saveTheme(state, action) {
       state.lists.push({
@@ -71,8 +70,7 @@ const listSlice = createSlice({
       });
     },
     deleteTheme(state, action) {
-      console.log(state);
-      state.lists = state.lists.filter(list => list.id !== action.payload.id);
+      state.lists = state.lists.filter(list => list.id !== action.payload);
     },
     findEditThemeId(state, action) {
       state.editThemeId = action.payload.id;
@@ -84,9 +82,7 @@ const listSlice = createSlice({
       state.editMode = !state.editMode;
     },
     updateTheme(state, action) {
-      const themeEdit = state.lists.find(
-        list => list.id === action.payload.id
-      );
+      const themeEdit = state.lists.find(list => list.id === action.payload.id);
       if (themeEdit) {
         themeEdit.description = action.payload.description;
         themeEdit.title = action.payload.title;
@@ -101,7 +97,7 @@ const listSlice = createSlice({
     },
   },
   extraReducers: builder => {
-    builder.addCase(getThemes.pending, (state) => {
+    builder.addCase(getThemes.pending, state => {
       state.loading = true;
     });
     builder.addCase(getThemes.fulfilled, (state, action) => {
@@ -122,7 +118,6 @@ const listSlice = createSlice({
       state.loading = false;
       listSlice.caseReducers.deleteTheme(state, action);
       state.error = "";
-      console.log(action.payload);
     });
     builder.addCase(deleteThemes.rejected, (state, action) => {
       state.loading = false;
@@ -147,7 +142,6 @@ const listSlice = createSlice({
     });
     builder.addCase(updateThemes.fulfilled, (state, action) => {
       state.loading = false;
-      console.log(state);
       listSlice.caseReducers.updateTheme(state, action);
       state.error = "";
     });

@@ -13,7 +13,7 @@ const App = () => {
   const { loading, error } = useSelector(state => state.themes);
   const [searchTitle, setSearchTitle] = useState("");
   const dispatch = useDispatch();
-  const toggle = (start) => setStart(!start);
+  const toggle = start => setStart(!start);
 
   useEffect(() => {
     dispatch(getThemes());
