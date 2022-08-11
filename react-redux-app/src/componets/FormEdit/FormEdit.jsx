@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import bucket from "../../img/bucet.svg";
-import { updateTheme, toggleEdit } from "../../store/listSlice";
+import { updateThemes, toggleEdit } from "../../store/listSlice";
 import "./FormEdit.css";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
@@ -15,8 +15,8 @@ const FormEdit = () => {
   const dispatch = useDispatch();
   const toggleEditeForm = () => dispatch(toggleEdit());
   const editTheme = allTheme.find(el => el.id === findId);
-  const onSubmit = (values) => {
-    dispatch(updateTheme(values ));
+  const onSubmit = values => {
+    dispatch(updateThemes(values));
     toggleEditeForm();
   };
 

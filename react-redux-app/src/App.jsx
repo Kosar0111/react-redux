@@ -9,8 +9,8 @@ import loadingGif from "./img/loading.gif";
 
 const App = () => {
   const [start, setStart] = useState(true);
-  const themes = useSelector((state) => state.themes.lists);
-  const { loading, error } = useSelector((state) => state.themes);
+  const themes = useSelector(state => state.themes.lists);
+  const { loading, error } = useSelector(state => state.themes);
   const [searchTitle, setSearchTitle] = useState("");
   const dispatch = useDispatch();
   const toggle = (start) => setStart(!start);

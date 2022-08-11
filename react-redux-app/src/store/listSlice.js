@@ -7,8 +7,8 @@ export const getThemes = createAsyncThunk(
   async (_, rejectWithValue) => {
     return await axios
       .get("http://localhost:3001/themes")
-      .then((res) => res.data)
-      .catch((err) => rejectWithValue(err.message));
+      .then(res => res.data)
+      .catch(err => rejectWithValue(err.message));
   }
 );
 
@@ -22,21 +22,33 @@ export const addThemes = createAsyncThunk(
         description: value.description.trim(),
         time: JSON.stringify(Date.now()),
       })
-      .then((res) => res.data)
-      .catch((err) => rejectWithValue(err.res.data));
+      .then(res => res.data)
+      .catch(err => rejectWithValue(err.res.data));
   }
 );
 
 export const deleteThemes = createAsyncThunk(
   "lists/deleteThemes",
-  async (id, { rejectWithValue, dispatch }) => {
+  async (id, { rejectWithValue }) => {
     return await axios
-      .delete(`http://localhost:3001/themes/${id}`, { id })
-      .then((res) => res.data)
-      .catch((err) => rejectWithValue(err.res.data));
+      .delete(`http://localhost:3001/themes/${id}`)
+      .then(res => id)
+      .catch(err => rejectWithValue(err.res));
   }
 );
 
+export const updateThemes = createAsyncThunk(
+  "lists/updateThemes",
+  async (value, { rejectWithValue }) => {
+    return await axios
+      .patch(`http://localhost:3001/themes/${value.id}`, {
+        title: value.title.trim(),
+        description: value.description.trim(),
+      })
+      .then(res => res.data)
+      .catch(err => rejectWithValue(err.res));
+  }
+);
 const listSlice = createSlice({
   name: "lists",
 
@@ -52,14 +64,15 @@ const listSlice = createSlice({
   reducers: {
     saveTheme(state, action) {
       state.lists.push({
-        id: uuidv4(),
+        id: action.payload.id,
         title: action.payload.title.trim(),
         description: action.payload.description.trim(),
-        time: new Date().toString(),
+        time: action.payload.time,
       });
     },
     deleteTheme(state, action) {
-      state.lists = state.lists.filter((list) => list.id !== action.payload.id);
+      console.log(state);
+      state.lists = state.lists.filter(list => list.id !== action.payload.id);
     },
     findEditThemeId(state, action) {
       state.editThemeId = action.payload.id;
@@ -72,9 +85,8 @@ const listSlice = createSlice({
     },
     updateTheme(state, action) {
       const themeEdit = state.lists.find(
-        (list) => list.id === action.payload.id
+        list => list.id === action.payload.id
       );
-
       if (themeEdit) {
         themeEdit.description = action.payload.description;
         themeEdit.title = action.payload.title;
@@ -82,12 +94,13 @@ const listSlice = createSlice({
     },
     sortDate(state) {
       state.lists.sort((a, b) => b.time.localeCompare(a.time));
+      console.log(state);
     },
     sortTitle(state) {
       state.lists.sort((a, b) => a.title.localeCompare(b.title));
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder.addCase(getThemes.pending, (state) => {
       state.loading = true;
     });
@@ -101,22 +114,22 @@ const listSlice = createSlice({
       state.error = action.error.message;
     });
 
-    builder.addCase(deleteThemes.pending, (state) => {
+    builder.addCase(deleteThemes.pending, state => {
       state.loading = true;
       state.error = "";
     });
     builder.addCase(deleteThemes.fulfilled, (state, action) => {
       state.loading = false;
-      console.log(action);
       listSlice.caseReducers.deleteTheme(state, action);
       state.error = "";
+      console.log(action.payload);
     });
     builder.addCase(deleteThemes.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
     });
 
-    builder.addCase(addThemes.pending, (state) => {
+    builder.addCase(addThemes.pending, state => {
       state.loading = true;
     });
     builder.addCase(addThemes.fulfilled, (state, action) => {
@@ -125,6 +138,20 @@ const listSlice = createSlice({
       state.error = "";
     });
     builder.addCase(addThemes.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+
+    builder.addCase(updateThemes.pending, state => {
+      state.loading = true;
+    });
+    builder.addCase(updateThemes.fulfilled, (state, action) => {
+      state.loading = false;
+      console.log(state);
+      listSlice.caseReducers.updateTheme(state, action);
+      state.error = "";
+    });
+    builder.addCase(updateThemes.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
     });

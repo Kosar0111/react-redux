@@ -9,7 +9,6 @@ const modalRoot = document.getElementById("modal");
 const Modal = ({ active, setActive, id }) => {
   const dispatch = useDispatch();
   const toggleEditeForm = () => dispatch(toggleEdit());
-  console.log(id);
   const removeTheme = () => {
     dispatch(deleteThemes(id));
     setActive(!active);

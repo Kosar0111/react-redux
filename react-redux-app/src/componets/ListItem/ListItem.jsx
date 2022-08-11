@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleEdit, findEditThemeId } from "../../store/listSlice";
 
 const ListItem = ({ ...theme }) => {
-  const editMode = useSelector((state) => state.themes.editMode);
-  const newTheme = useSelector((state) => state.themes.newItemMode);
+  const editMode = useSelector(state => state.themes.editMode);
+  const newTheme = useSelector(state => state.themes.newItemMode);
   const id = theme.id;
   const dispatch = useDispatch();
 

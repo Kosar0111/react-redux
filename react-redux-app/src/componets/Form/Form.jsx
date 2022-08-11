@@ -7,12 +7,12 @@ import FormEdit from "../FormEdit/FormEdit";
 import validationSchema from "../../helpers/validation";
 
 const Form = () => {
-  const newThemes = useSelector((state) => state.themes.newItemMode);
-  const editMode = useSelector((state) => state.themes.editMode);
+  const newThemes = useSelector(state => state.themes.newItemMode);
+  const editMode = useSelector(state => state.themes.editMode);
   const dispatch = useDispatch();
 
   const hiddenForm = () => dispatch(newTheme());
-  const onSubmit = (values) => {
+  const onSubmit = values => {
     dispatch(addThemes(values));
     hiddenForm();
     formik.resetForm();

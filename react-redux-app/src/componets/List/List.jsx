@@ -5,16 +5,15 @@ import ListItem from "../ListItem/ListItem";
 import { newTheme } from "../../store/listSlice";
 
 const List = ({ searchTitle }) => {
-  const themes = useSelector((state) => state.themes.lists);
-  console.log(themes);
-  const sortTitle = themes.filter((theme) =>
+  const themes = useSelector(state => state.themes.lists);
+  const sortTitle = themes.filter(theme =>
     theme.title.toLowerCase().includes(searchTitle.toLowerCase())
   );
 
   const dispatch = useDispatch();
   const hiddenForm = () => dispatch(newTheme());
-  const addTheme = useSelector((state) => state.themes.newItemMode);
-  const editMode = useSelector((state) => state.themes.editMode);
+  const addTheme = useSelector(state => state.themes.newItemMode);
+  const editMode = useSelector(state => state.themes.editMode);
 
   return (
     <div className="list">
