@@ -1,0 +1,55 @@
+.list {
+  text-align: center;
+  margin: 30px auto 0 auto;
+  overflow: auto;
+}
+
+.new{
+  width: 30%;
+  background-color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-visible{
+  pointer-events: none;
+}
+
+@media (min-width: 376px) and (max-width: 425px){
+  .new{
+    width: 50%;
+    background-color: #fff;
+    font-size: 0.75rem;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px){
+  .new{
+    width: 50%;
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
+  .new{
+    width: 30%;
+    background-color: #fff;
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.modal__content {
+  position: relative;
+  background: #fff;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+}
+
+.delete {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid #000;
+  background-color: grey;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.content_text {
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
+.content_text h2 {
+  font-size: 2rem;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button_cancel {
+  background-color: red;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button_confirm {
+  background-color: green;
+  padding: 10px;
+  cursor: pointer;
+}

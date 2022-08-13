@@ -1,0 +1,324 @@
+.form-edit {
+  border: 1px solid #000;
+  margin: 10px 20px 0 20px;
+  position: relative;
+  height: 93%;
+}
+.edit-all {
+  height: 93%;
+}
+
+.form-edit-hidden {
+  visibility: hidden;
+}
+
+.form-searce-edit {
+  width: 60%;
+}
+
+.img-bucet-edit {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.title-edit {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input-title-edit {
+  width: 80%;
+  height: 40px;
+  display: flex;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-left: 15px;
+  padding-left: 10px;
+  border: 1px solid #000;
+}
+
+.input-title-edit::placeholder {
+  font-size: 1.25rem;
+}
+
+.form-discription-edit {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.textarea-edit {
+  display: block;
+  height: 55%;
+  margin-right: 10px;
+}
+.form-textarea-edit {
+  display: block;
+  width: 95%;
+  height: 85%;
+  resize: none;
+  margin-top: 25px;
+  margin-left: 15px;
+  font-size: 2rem;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.save-edit {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  background-color: #fff;
+  font-size: 1.25rem;
+  margin: 5px auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-edit {
+  margin: 10px 15px;
+  color: red;
+  font-size: 1rem;
+}
+
+.save-hidden-edit {
+  pointer-events: none;
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .form-edit {
+    border: 1px solid #000;
+    margin: 30px 20px 0 20px;
+    position: relative;
+    height: 92%;
+  }
+  .edit-all {
+    height: 93%;
+  }
+
+  .form-edit-hidden {
+    display: none;
+  }
+
+  .form-searce-edit {
+    width: 40%;
+  }
+
+  .img-bucet-edit {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .title-edit {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .input-title-edit {
+    width: 80%;
+    height: 30px;
+    display: flex;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+  }
+
+  .input-title-edit::placeholder {
+    font-size: 1.25rem;
+  }
+
+  .form-discription-edit {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .form-textarea-edit {
+    display: block;
+    height: 89%;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.25rem;
+    padding-top: 15px;
+    padding-left: 15px;
+    border: 1px solid #000;
+  }
+
+  .textarea-edit {
+    display: block;
+    width: 87%;
+    height: 55%;
+  }
+
+  .error-edit {
+    margin-top: 10px;
+    margin-left: 15px;
+    color: red;
+    font-size: 0.6rem;
+  }
+
+  .save-edit {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    background-color: #fff;
+    font-size: 1rem;
+    margin: 40px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .save-hidden-edit {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .form-edit {
+    border: 1px solid #000;
+    margin: 30px 20px 0 20px;
+    position: relative;
+    height: 92%;
+  }
+  .edit-all {
+    height: 93%;
+  }
+  .title-edit {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .input-title-edit {
+    width: 80%;
+    height: 30px;
+    display: flex;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+  }
+  .form-discription-edit {
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .form-textarea-edit {
+    display: block;
+    height: 89%;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.25rem;
+    padding-top: 15px;
+    padding-left: 15px;
+    border: 1px solid #000;
+  }
+  .textarea-edit {
+    display: block;
+    height: 60%;
+  }
+  .save-edit {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    background-color: #fff;
+    font-size: 1rem;
+    margin: 10px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .error-edit {
+    display: flex;
+    flex: start;
+    margin: 10px 15px;
+    color: red;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .form-edit {
+    border: 1px solid #000;
+    margin: 30px 20px 0 20px;
+    position: relative;
+    height: 89%;
+  }
+  .edit-all {
+    height: 93%;
+  }
+  .img-bucet-edit {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .form-discription-edit {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .textarea-edit {
+    display: block;
+    height: 52.5%;
+  }
+
+  .form-textarea-edit {
+    display: block;
+    height: 45vh;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 1.25rem;
+    padding-top: 10px;
+    padding-left: 15px;
+    border: 1px solid #000;
+  }
+
+  .error-edit {
+    margin-top: 5px;
+    margin-left: 10px;
+    color: red;
+    font-style: 0.6rem;
+  }
+
+  .save-edit {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    background-color: #fff;
+    font-size: 1.25rem;
+    margin: 10px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
